@@ -11,9 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import environ
-env = environ.Env()
-environ.Env.read_env()
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,8 +127,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+STATIC_URL = '/static/'
+
+
+STATIC_ROOT = BASE_DIR / 'staticfiles' ## i have to add this fo deploying in render   
+# and then give this commad    py manage.py collectstatic
+
+
+STATICFILES_DIRS = [
+    BASE_DIR/'static',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -140,5 +150,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = env("EMAIL")
-EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
+EMAIL_HOST_USER = 'ashikaslam1111@gmail.com'  # Replace 'your_gmail_address' with your actual Gmail address
+EMAIL_HOST_PASSWORD = 'dtlh naod xfcw qxpl'  # Replace with your generated app password
