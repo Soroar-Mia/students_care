@@ -157,8 +157,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ashikaslam1111@gmail.com'  # Replace 'your_gmail_address' with your actual Gmail address
 EMAIL_HOST_PASSWORD = 'dtlh naod xfcw qxpl'  # Replace with your generated app password
 
-
-CORS_ALLOWED_ORIGINS = [
-    "http://192.168.1.195:5500",
-    "http://localhost:5173",
-]
+CORS_ALLOW_ALL_ORIGINS = True
