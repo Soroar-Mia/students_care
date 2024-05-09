@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'teacher',
     'student',
     'service',
+    'corsheaders',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'Students_Care.urls'
@@ -152,3 +156,9 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ashikaslam1111@gmail.com'  # Replace 'your_gmail_address' with your actual Gmail address
 EMAIL_HOST_PASSWORD = 'dtlh naod xfcw qxpl'  # Replace with your generated app password
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://192.168.1.195:5500",
+    "http://localhost:5173",
+]
